@@ -1,0 +1,43 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+/*
+    Reset margins and padding so browser doesn't automatically add it to elements
+    Border box sizing changes the box model so the borders and paddings aren't added to the total width/height of a box
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+    Everything related to font must be in the body selector
+    Font properties are inherited
+*/
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+}
+
+/*
+    95vh = 95% of viewport height 
+    .. to get out of css file and into main file
+    background-size cover will try to fit the element of the box within the width of viewport
+    position top ensures image stays at the top of the container, so the top of the image stays the same even if the size of the page changes
+*/
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to right, #7ed56f, #28b485),url(../img/hero.jpg);
+    background-size: cover;
+    background-position: top;
+}
