@@ -1,0 +1,20 @@
+/*
+    Reset margins and padding so browser doesn't automatically add it to elements
+    Border box sizing changes the box model so the borders and paddings aren't added to the total width/height of a box
+*/
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}

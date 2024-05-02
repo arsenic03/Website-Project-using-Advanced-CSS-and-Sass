@@ -1,0 +1,22 @@
+{
+  "name": "landingpage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arsenic03/Landing-Page.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arsenic03/Landing-Page/issues"
+  },
+  "homepage": "https://github.com/arsenic03/Landing-Page#readme",
+  "devDependencies": {
+    "node-sass": "^9.0.0"
+  }
+}

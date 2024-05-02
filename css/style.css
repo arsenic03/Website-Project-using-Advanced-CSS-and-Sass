@@ -1,34 +1,52 @@
-/*
-COLORS:
+/* Animations */
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); }
+  80% {
+    transform: translate(10px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
 
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px); }
+  80% {
+    transform: translate(-10px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
 
-*/
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
 
 /*
     Reset margins and padding so browser doesn't automatically add it to elements
     Border box sizing changes the box model so the borders and paddings aren't added to the total width/height of a box
 */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
 
 /*
     Everything related to font must be in the body selector
     Font properties are inherited
 */
 body {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.7;
-    color: #777;
-    padding: 30px;
-}
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #fff;
+  padding: 30px; }
 
 /*
     95vh = 95% of viewport height 
@@ -37,168 +55,49 @@ body {
     position top ensures image stays at the top of the container, so the top of the image stays the same even if the size of the page changes
 */
 .header {
-    height: 95vh;
-    background-image: linear-gradient(
-        to right bottom,
-        rgba(126, 213, 111, 0.8),
-        rgba(40, 100, 131, 0.8)),
-    url(../img/hero.jpg);
-    background-size: cover;
-    background-position: top;
-    position: relative;
-
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-}
-
-/* Put logo in top left, relative to header */
-.logo-box {
-    position: absolute;
-    top: 40px;
-    left: 40px;
-}
-
-/* Width will scale automatically according to height*/
-.logo {
-    height: 35px;
-}
-
-/* 
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* Put logo in top left, relative to header */
+  /* Width will scale automatically according to height*/
+  /* 
     Centering main text
     Translate moves everything to properly center it
     Absolute positioning is in relation to parent element header
-*/
-.text-box {
+  */ }
+  .header__logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px; }
+  .header__logo {
+    height: 35px; }
+  .header__text-box {
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
-}
+    text-align: center; }
 
 /* hiding backface makes the animations smoother and less shakey*/
 .heading-primary {
-    color: #fff;
-    text-transform: uppercase;
-
-    backface-visibility: hidden;
-    margin-bottom: 60px;
-}
-
-.heading-primary-main {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 60px; }
+  .heading-primary--main {
     display: block;
     font-size: 60px;
     font-weight: 400;
     letter-spacing: 35px;
-
     animation-name: moveInLeft;
     animation-duration: 1s;
-    animation-timing-function: ease-out;
-}
-
-.heading-primary-sub {
+    animation-timing-function: ease-out; }
+  .heading-primary--sub {
     display: block;
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 17.4px;
-    
-    animation: moveInRight 1s ease-out;
-}
-
-/* Animations */
-@keyframes moveInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-
-    80% {
-        transform: translate(10px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-}
-
-@keyframes moveInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-
-    80% {
-        transform: translate(-10px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-}
-
-@keyframes moveInBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-}
-
-.btn:link,
-.btn:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 15px 40px;
-    display: inline-block;
-    border-radius: 100px;
-    transition: all .2s;
-    position: relative;
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
-}
-
-.btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
-}
-
-.btn-white {
-    background-color: #fff;
-    color: #777;
-}
-
-.btn::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all .4s;
-}
-
-.btn-white::after {
-    background-color: #fff;
-}
-
-.btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-}
-
-/* animation fill mode backwards applies 0% animation automatically before it starts*/
-.btn-animated {
-    animation: moveInBottom .5s ease-out 0.75s;
-    animation-fill-mode: backwards;
-}
+    animation: moveInRight 1s ease-out; }
