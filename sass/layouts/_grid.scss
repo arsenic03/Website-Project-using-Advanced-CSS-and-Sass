@@ -1,0 +1,11 @@
+/* 0 auto is a trick to automatically center blocks (sets left and right margin to be equal)*/
+
+.row {
+  max-width: $grid-width;
+  background-color: #eee;
+  margin: 0 auto;
+
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+  }
+}
