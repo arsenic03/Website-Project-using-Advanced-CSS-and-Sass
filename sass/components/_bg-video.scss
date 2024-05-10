@@ -1,0 +1,21 @@
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: .15;
+    overflow: hidden;
+
+    &__content {
+        height: 100%;
+        width: 100%;
+        /*
+            Will let background video fit to the size of the parent section
+            Maintains aspect ratio
+            What doesn't fit gets clipped off
+        */
+        object-fit: cover;
+    }
+}
