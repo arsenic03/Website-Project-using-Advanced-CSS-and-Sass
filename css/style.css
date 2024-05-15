@@ -1,3 +1,19 @@
+/*
+    0-600           Phone
+    600-900         Tablet portrait
+    900-1200px      Tablet landscape
+    1200-1800px     Normal styles (Desktop)
+    1800px+         Big Desktop
+
+    $breakpoint argument choices:
+    - phone
+    - tab-port
+    - tab-land
+    - big-desktop
+
+    1em = 16px
+    Using em so it adapts to the browser's font size set by the user
+*/
 /* Animations */
 @keyframes moveInLeft {
   0% {
@@ -40,6 +56,15 @@
 
 html {
   font-size: 62.5%; }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
 
 body {
   box-sizing: border-box; }
@@ -51,10 +76,10 @@ body {
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 1.7;
   color: #777;
-  padding: 30px; }
+  padding: 3rem; }
 
 /*without transparent colour, text colour will sit on top of background image*/
 .heading-secondary {
@@ -147,7 +172,7 @@ body {
     display: inline-block;
     height: 100%;
     width: 100%;
-    border-radius: 100px;
+    border-radius: 10rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -174,7 +199,7 @@ body {
   display: inline-block;
   text-decoration: none;
   border-bottom: 1px solid #55c57a;
-  padding: 3px; }
+  padding: .3rem; }
 
 .btn-text:hover {
   background-color: #55c57a;
@@ -629,10 +654,10 @@ body {
   */ }
   .header__logo-box {
     position: absolute;
-    top: 40px;
-    left: 40px; }
+    top: 4rem;
+    left: 4rem; }
   .header__logo {
-    height: 35px; }
+    height: 3.5rem; }
   .header__text-box {
     position: absolute;
     top: 40%;
@@ -645,20 +670,20 @@ body {
   color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden;
-  margin-bottom: 60px; }
+  margin-bottom: 6rem; }
   .heading-primary--main {
     display: block;
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-timing-function: ease-out; }
   .heading-primary--sub {
     display: block;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 17.4px;
+    letter-spacing: 1.74rem;
     animation: moveInRight 1s ease-out; }
 
 .navigation__checkbox {
@@ -742,7 +767,7 @@ body {
   margin-top: 3.5rem; }
   .navigation__icon, .navigation__icon::before, .navigation__icon::after {
     width: 3rem;
-    height: 2px;
+    height: .2rem;
     background-color: #333;
     display: inline-block; }
   .navigation__icon::before, .navigation__icon::after {
